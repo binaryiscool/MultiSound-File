@@ -46,3 +46,10 @@ Look up table used for the Samplerate:
 
 ## Data
 After the track header comes the data of all of the tracks. All audio data comes after the track header ends. Each track is placed in sequential order (although they do not have to be) in relation to the track header. While WAV files have their header stripped, FLaCs do not.
+
+# Planned Changed
+- [ ] Loop start + end - 4 bytes long, in samples.
+- [ ] Add proper version reading, and the ability to go pass 255 versions.
+- [ ] Implement "preloading" in the 4th bit of the flags byte.
+- [ ] Fill out samplerate LUT.
+- [ ] Allow playing a .msf (whole file or specific track) from the python file.
