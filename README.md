@@ -5,7 +5,7 @@ To generate a .msf file with the python file included, you must provide a .toml 
 <br>\[tracks.TRACKNAME]\
 File = "PATH-TO-FILE"
 <br>Name = "TRACK NAME"
-<br>SampleRate = 0 # See [here](#data) for the look up table used to determine the samplerate
+<br>SampleRate = 0 # See [here](#notes) for the look up table used to determine the samplerate
 <br>Stereo = 1 # 1 = Stereo, 0 = Mono
 <br>Loop = 0 # 0 = No looping, 1 = looped
 <br>BitDepth = 2 # How many bytes each sample should take up
