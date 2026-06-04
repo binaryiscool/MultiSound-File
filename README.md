@@ -1,6 +1,21 @@
-A "MultiSound File" (MSF) is a binary file which contains multiple audio tracks inside of it, either raw or encoded via flac.
+A "MultiSound File" (MSF) is a binary file which contains multiple audio tracks inside of it, either raw or encoded via flac. It is heavily encourge to mess around with the format spec and the python file provided. Maybe make it so samplerate ISN'T a look up table, eh?
 
-# TOML Specifications
+# msf-handler.py use
+msf-handler.py is a python script included inside of this repo used to generate and unpack .msf files. It is recommended to use the latest version of Python (3.14.5) before running.
+
+## Generating a .MSF file
+Generating a .MSF file requires audio files (either WAV or FLaC), along with a TOML defining each track in the MSF file. To generate one, use the following command:
+<br>`python msf-handler.py create <output path> <input toml>`
+
+Replace anything in `<>` with the correct paths on your computer, and your .MSF file should generate.
+
+## Unpacking a .MSF file
+"Unpacking" refers to getting all of the indivual audio files (tracks) from a single .MSF. To unpack a .MSF file, use the following command:
+<br>`python msf-handler.py unpack <input MSF>`
+
+Like before, replace anything in `<>` with the correct paths on your computer, and it should output all of the tracks. Due to how the format works, FLaCs will keep all of their metadata (Track Title, Album, etc) while WAVs won't.
+
+### TOML Specifications
 To generate a .msf file with the python file included, you must provide a .toml file, so that the program can assign the right meta . Each track must be defined as:
 <br>\[tracks.TRACKNAME]\
 File = "PATH-TO-FILE"
@@ -52,4 +67,5 @@ After the track header comes the data of all of the tracks. All audio data comes
 - [ ] Add proper version reading, and the ability to go pass 255 versions.
 - [ ] Implement "preloading" in the 4th bit of the flags byte.
 - [ ] Fill out samplerate LUT.
+- [ ] Add Metadata to .WAVs outputted from unpacking.
 - [ ] Allow playing a .msf (whole file or specific track) from the python file.
