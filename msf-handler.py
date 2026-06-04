@@ -2,8 +2,6 @@ import sys
 import tomllib
 import os
 import struct
-import soundfile as sf
-import io
 
 # Flag Byte:
 # SampleRate 0-3 - The sample rate of the audio track. 0 = 44.1khz, 1 = 48, 2 = 22.05, 3 = 11.025, 4 = 32, 5 = 36, 6 = 8, 7 = 96
