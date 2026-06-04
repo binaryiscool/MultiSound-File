@@ -34,12 +34,12 @@ Every .MSF starts with the 3 letters "MSF" (0x4D5346), along with a byte after t
 
 ## Track Header
 Following the file signature is the track header. Each track is defined as:
-Name Length - Always takes up 1 byte, defines the length of the name in bytes.
-Name - Of arbitrary length. Due to the fact Name Length is always 1 byte long.
-Flags & Samplerate - 1 Byte long. Bit 7 defines if the track is stereophonic or not, bit 6 defines if the track is looped, bit 5 defines if the audio is encoded (always encoded with FLaC), bit 4 is reserved, and bits 3-0 define the samplerate (from a look up table).
-Bit Depth - 1 Byte long. Defines the bit depth as how many bytes each sample should take up.
-Offset - 4 Bytes long. Defines the byte offset into the file.
-Size - 4 Bytes long, defines the size (in bytes) of the track.
+* Name Length - Always takes up 1 byte, defines the length of the name in bytes.
+* Name - Of arbitrary length. Due to the fact Name Length is always 1 byte long.
+* Flags & Samplerate - 1 Byte long. Bit 7 defines if the track is stereophonic or not, bit 6 defines if the track is looped, bit 5 defines if the audio is encoded (always encoded with FLaC), bit 4 is reserved, and bits 3-0 define the samplerate (from a look up table).
+* Bit Depth - 1 Byte long. Defines the bit depth as how many bytes each sample should take up.
+* Offset - 4 Bytes long. Defines the byte offset into the file.
+* Size - 4 Bytes long, defines the size (in bytes) of the track.
 
 ### Notes
 * Since "Name Length" is always a byte long, "Name" has a maximum length of 255.
@@ -61,6 +61,10 @@ Look up table used for the Samplerate:
 
 ## Data
 After the track header comes the data of all of the tracks. All audio data comes after the track header ends. Each track is placed in sequential order (although they do not have to be) in relation to the track header. While WAV files have their header stripped, FLaCs do not.
+
+# Recommended use cases
+* Storing multiple music files and sound effects in a single file, to remove clutter.
+* Storing all of the tracks from a CD in 1 file.
 
 # Planned Changed
 - [ ] Loop start + end - 4 bytes long, in samples.
