@@ -4,10 +4,10 @@ import struct
 
 # V1 of the MSF format.
 # Current file spec over view:
-# MSF + Version number - same as before. The version number will "overflow" into the next byte if the one before it is equal to 255.
+# MSF + Version number - version number is now 2 bytes. I doubt there'd be 2^16 versions of this 1 format.
 # BNK - BNK marker
 # Bank name - always 3 bytes long. Name of the bank
-# Track definition - 4 bytes long. Unique string of 4 characters defining how it should be read.
+# Track definition - 4 bytes long. Unique string, or hex number if you're a fucking bimbo, of 4 bytes defining how it (the TRACKS) should be read.
 # Bank size - 4 bytes long. Defines the bank length in bytes
 # TRK - TRK header. Used to denote a new track. Anything can be inside of a track.
 # DAT - Used to denote the data block.
@@ -16,19 +16,44 @@ import struct
 HEADER = 0x4D5346
 VERSION = 0x0001
 
-Ask = None
-
 if len(sys.argv) > 1:
     print("No arguments are needed...")
     sys.exit(1)
 
 def CreateMSF():
-    print("To create an MSF file, you must create banks, which contain both individual tracks, along with data.\nSelect one of the options below by inputting its number:")
-    UserInput = input("Select an option: ")
+    Banks = []
+    Tracks = []
+    Data = []
+    InCreation = True
+    print("To create an MSF file, you must have atleast one bank. Banks contain both tracks and data")
+    while InCreation:
+        print("Select one of the options below by inputting its number: \n [0] Create new bank \n [1] See list of banks \n [2] Delete a bank \n [3] Create binary \n [4] Exit")
+        UserInput = input("Select an option: ")
+        if UserInput.isdigit() and int(UserInput) <= 4 and int(UserInput) >= 0:
+            UserInt = int(UserInput)
+            match UserInt:
+                case 0:
+                    print("i dont know waltah")
 
-print("Welcome to the MSF Handler CLI! With this tool (and some navigation), you'll be able to create, view, and unpack .msf!\nSelect one of the options below by inputting its number: \n [0] Create a new MSF \n [1] View an existing MSF \n [2] Extract an existing MSF \n [3] Exit program")
+                case 1:
+                    print("i dont know waltah")
+
+                case 2:
+                    print("i dont know waltah")
+
+                case 3:
+                    print("i dont know waltah")
+                
+                case 4:
+                    InCreation = False
+
+        else:
+            print("Not an option.")
+
+print("Welcome to the MSF Handler CLI! With this tool (and some navigation), you'll be able to create, view, and unpack .msf!")
 
 while True:
+    print("Select one of the options below by inputting its number: \n [0] Create a new MSF \n [1] View an existing MSF \n [2] Extract an existing MSF \n [3] Exit program")
     UserInput = input("Select an option: ")
     if UserInput.isdigit() and int(UserInput) <= 3 and int(UserInput) >= 0:
         UserInt = int(UserInput)
