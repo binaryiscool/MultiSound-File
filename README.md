@@ -74,7 +74,7 @@ Designated by the CDDA track definition, this can be treated as a way to store e
 All of the data in the data block is expected to be raw, 16-bit, 44.1khz PCM data.
 
 ### MultiSound File Binary
-Designated by the MSFB track definition, this can be treated as a way to store and archive arbitrary data, mainly for data that isn't data. The following table designates how each track should be interpreted:
+Designated by the MSFB track definition, this can be treated as a way to store and archive arbitrary data, mainly for data that isn't audio data. The following table designates how each track should be interpreted:
 
 | Value Name | Length | Description |
 | --- | --- | --- |
