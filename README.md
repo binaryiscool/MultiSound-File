@@ -57,6 +57,7 @@ All audio files will have their header stripped, and therefore, the headers must
 
 ### CD Digital Audio
 Designated by the CDDA track definition, this can be treated as a way to store entire CDs in a single bank. The following table designates how each track should be interpreted:
+
 | Value Name | Length | Description |
 | --- | --- | --- |
 | Name Length | 1 Byte | Defines how long the name should be in bytes. |
@@ -70,5 +71,15 @@ Designated by the CDDA track definition, this can be treated as a way to store e
 | Offset | 4 Bytes | Offset into the data block in bytes. |
 | Size | 4 Bytes | Size of the track in bytes. |
 
+All of the data in the data block is expected to be raw, 16-bit, 44.1khz PCM data.
+
 ### MultiSound File Binary
-TBD
+Designated by the MSFB track definition, this can be treated as a way to store and archive arbitrary data, mainly for data that isn't data. The following table designates how each track should be interpreted:
+
+| Value Name | Length | Description |
+| --- | --- | --- |
+| Name Length | 1 Byte | Defines how long the name should be in bytes. |
+| Name | N Bytes | Defines the name for the track. |
+| File Extension | 3 Bytes | File extension of the data. Does not dictate what data can be stored in the track. |
+| Offset | 4 Bytes | Offset into the data block in bytes. |
+| Size | 4 Bytes | Size of the track in bytes. |
