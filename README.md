@@ -37,6 +37,7 @@ Designated by the MSFA track definition, this can be treated as an improved MSF 
 | Name | N Bytes | Defines the name for the track. |
 | Flags | 1 Byte | Bit 7 defines if the track is stereo, bit 6 defines if the track is looped, bits 5-4 are reserved, and bits 3-0 define how the data is encoded via a look up table. |
 | Samplerate | 3 Bytes | Defines the samplerate of the track in hz. |
+| ByteDepth | 1 Byte | Defines the byte depth of the track. Essentially the bit depth, but divided by 8. |
 | Offset | 4 Bytes | Offset into the data block in bytes. |
 | Size | 4 Bytes | Size of the track in bytes. |
 | Loop Start | 4 Bytes | Only exists if the track is looped. Defines when the start of the is loop in samples. |
