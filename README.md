@@ -17,7 +17,7 @@ Like before, replace anything in `<>` with the correct paths on your computer, a
 
 ### TOML Specifications
 To generate a .msf file with the python file included, you must provide a .toml file, so that the program can assign the right meta . Each track must be defined as:
-<br>\[tracks.TRACKNAME]\
+<br>\[track.TRACKNAME]\
 File = "PATH-TO-FILE"
 <br>Name = "TRACK NAME"
 <br>SampleRate = 0 (See [here](#notes) for the look up table used to determine the samplerate)
