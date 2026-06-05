@@ -56,7 +56,19 @@ Encoding look up table:
 All audio files will have their header stripped, and therefore, the headers must be reconstructed when extracting files from a MSFA bank.
 
 ### CD Digital Audio
-TBD
+Designated by the CDDA track definition, this can be treated as a way to store entire CDs in a single bank. The following table designates how each track should be interpreted:
+| Value Name | Length | Description |
+| --- | --- | --- |
+| Name Length | 1 Byte | Defines how long the name should be in bytes. |
+| Name | N Bytes | Defines the name for the track. |
+| Album Length | 1 Byte | Defines how long the album name should be in bytes. |
+| Album Name | N Bytes | Name of the album the track belongs to. |
+| Artist Length | 1 Byte | Defines how long the artist name should be in bytes. |
+| Artist Name | N Bytes | Name of the artist the track/album belongs to. |
+| Disc Number | 1 Byte | What number disc the track was stored on. |
+| Track Number | 1 Byte | Number of the track in the album. |
+| Offset | 4 Bytes | Offset into the data block in bytes. |
+| Size | 4 Bytes | Size of the track in bytes. |
 
 ### MultiSound File Binary
 TBD
