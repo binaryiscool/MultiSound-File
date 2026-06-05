@@ -12,7 +12,7 @@ Every .MSF starts with the 3 letters "MSF" (0x4D5346), along with 2 bytes after 
 
 ## Bank Header
 Following the file signature is the bank header. Every bank is designated by the `BNK` marker, and can contain, at most, **4.29GB**. Following the `BNK` marker, each bank is defined as:
-Bank Name - 3 bytes long. Uses ASCII characters.
+Bank Name - 3 bytes long. Uses UTF-8 characters.
 Track Definition - 4 bytes long. Defines how each track should be interpreted. Definitions can either be a string, or a number, depending on use case.
 Bank length - 4 bytes long. Defines how long the bank is in bytes.
 
